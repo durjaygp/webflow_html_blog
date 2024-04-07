@@ -71,6 +71,15 @@
                         </a>
                     </li>
 
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{route('project.index')}}">
+                  <span>
+                    <i class="ti ti-file-code"></i>
+                  </span>
+                            <span class="hide-menu">Project</span>
+                        </a>
+                    </li>
+
 {{--                    <li class="sidebar-item">--}}
 {{--                        <a class="sidebar-link" href="{{route('comment.message')}}">--}}
 {{--                      <span>--}}

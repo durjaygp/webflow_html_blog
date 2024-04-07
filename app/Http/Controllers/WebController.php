@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\FavoriteGames;
 use App\Models\Game;
 use App\Models\Page;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Auth;
@@ -19,6 +20,8 @@ class WebController extends Controller
 {
     public function index(){
         $blogs = Blog::latest()->whereStatus(1)->limit(4)->get();
+
+
 
         foreach ($blogs as $row) {
             $wordCount = str_word_count(strip_tags($row->main_content)); // Assuming description contains the content of the blog post
@@ -35,6 +38,14 @@ class WebController extends Controller
         $wordCount = str_word_count(strip_tags($blog->main_content));
         $readingTime = ceil($wordCount / 200);
         return view('frontEnd.blog.details',compact('blog','comments','readingTime'));
+    }
+
+    public function projectDetails($slug){
+        $project = Project::where('slug',$slug)->firstOrFail();
+
+        $wordCount = str_word_count(strip_tags($project->description));
+        $readingTime = ceil($wordCount / 200);
+        return view('frontEnd.project.project_details',compact('project','readingTime'));
     }
 
     public function category($slug) {
@@ -67,7 +78,7 @@ class WebController extends Controller
 
     public function privacyPolicy(){
         $privacy = Page::find(1);
-        return view('frontEnd_old.pages.privacy',compact('privacy'));
+        return view('frontEnd.pages.privacy',compact('privacy'));
     }
 
 

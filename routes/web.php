@@ -23,11 +23,13 @@ use App\Http\Controllers\Admin\GameController;
 use App\Http\Controllers\Admin\NewPageController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ProjectController;
 
 
 // =============== Home Routes ===============
 Route::get('/', [WebController::class,'index'])->name('home');
 Route::get('/blog/{slug}', [WebController::class,'blogDetails'])->name('home.blog');
+Route::get('/details/{slug}', [WebController::class,'projectDetails'])->name('home.project');
 Route::get('/category/{slug}', [WebController::class,'category'])->name('home.category');
 Route::get('/about-me', [WebController::class,'about'])->name('home.about');
 Route::get('/privacy-policy', [WebController::class,'privacyPolicy'])->name('privacy-policy');
@@ -136,6 +138,8 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
 
     Route::post('ckeditor-upload', [AdminController::class, 'ckeditorUpload'])->name('ckeditor.upload');
     Route::post('/summernote/upload', [AdminController::class, 'summernoteUpload'])->name('summernote.upload');
+
+    Route::resource('project',ProjectController::class);
 
 
 });

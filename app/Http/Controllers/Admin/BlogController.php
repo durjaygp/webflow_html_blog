@@ -99,7 +99,7 @@ class BlogController extends Controller
     public function delete($id){
         $blog = Blog::find($id);
         if (!$blog) {
-            return redirect()->back()->with('error', 'Book not found');
+            return redirect()->back()->with('error', 'Blog not found');
         }
         if (file_exists($blog->image)) {
             unlink($blog->image);
