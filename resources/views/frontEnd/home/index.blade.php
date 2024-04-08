@@ -283,78 +283,53 @@
                 </div>
                 <div data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fbb" style="-webkit-transform:translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 10%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="w-layout-grid brix---grid-blog-featured-v3">
                     <div id="w-node-b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fbc-d9cd27e8">
-                        <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fbd" href="blog.html" class="brix---blog-card-wrapper w-inline-block">
-                            <div class="brix---mg-bottom-32px">
-                                <div class="brix---blog-card-image-wrapper"><img srcset="{{asset('homePage')}}/images/02-blog-images-elements-brix-templates-p-500.jpg 500w, {{asset('homePage')}}/images/02-blog-images-elements-brix-templates-p-800.jpg 800w, {{asset('homePage')}}/images/02-blog-images-elements-brix-templates-p-1080.jpg 1080w, {{asset('homePage')}}/images/02-blog-images-elements-brix-templates.jpg 1758w" alt="Blog - Elements Webflow Library - BRIX Templates" sizes="(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 95vw, (max-width: 1439px) 56vw, 682.796875px" src="{{asset('homePage')}}/images/02-blog-images-elements-brix-templates.jpg" class="brix---blog-card-image"></div>
-                            </div>
-                            <div>
-                                <div class="brix---flex-horizontal-space-between">
-                                    <div class="brix---badge-primary-small-light">Marketing</div>
+
+                            <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fbd" href="{{ route('home.blog', $featured->slug) }}" class="brix---blog-card-wrapper w-inline-block">
+                                <div class="brix---mg-bottom-32px">
+                                    <div class="brix---blog-card-image-wrapper"><img srcset="{{asset($featured->image)}} 500w, {{asset($featured->image)}} 800w, {{asset($featured->image)}} 1080w, {{asset($featured->image)}} 1758w" alt="{{$row->name}}" sizes="(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 95vw, (max-width: 1439px) 56vw, 682.796875px" src="{{asset($featured->image)}}" class="brix---blog-card-image"></div>
+                                </div>
+                                <div>
+                                    <div class="brix---flex-horizontal-space-between">
+                                        <div class="brix---badge-primary-small-light">{{$featured->category->name}}</div>
+                                        <div class="brix---color-neutral-600">
+                                            <div class="brix---text-200">{{$row->created_at->format('Y M d')}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="brix---divider-24px"></div>
+                                    <div class="brix---mg-bottom-16px">
+                                        <div class="brix---color-neutral-801">
+                                            <h2 class="brix---heading-h2-size">{{ $featured->name }}</h2>
+                                        </div>
+                                    </div>
                                     <div class="brix---color-neutral-600">
-                                        <div class="brix---text-200">Jan 18, 202</div>
+                                        <div class="brix---paragraph-default">
+                                            <p class="brix---mg-bottom-0">{{\Illuminate\Support\Str::limit($row->description,135)}}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="brix---divider-24px"></div>
-                                <div class="brix---mg-bottom-16px">
-                                    <div class="brix---color-neutral-801">
-                                        <h2 class="brix---heading-h2-size">Optimizing your advertising campaigns for higher ROAS</h2>
-                                    </div>
-                                </div>
-                                <div class="brix---color-neutral-600">
-                                    <div class="brix---paragraph-default">
-                                        <p class="brix---mg-bottom-0">Lorem ipsum dolor sit amet conse ctetur adip iscing elit justo quis odio sit sit ac port titor sit males dolor sit consectur dolor.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+
                     </div>
+
                     <div id="w-node-b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fd1-d9cd27e8">
                         <div class="w-layout-grid brix---grid-1-column-gap-row-24px">
-                            <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fd3" href="blog.html" class="brix---blog-card-wrapper-featured-sidebar w-inline-block">
-                                <div class="brix---blog-card-wrapper-width-218px"><img srcset="{{asset('homePage')}}/images/03-square-blog-images-elements-brix-templates-p-500.jpg 500w, {{asset('homePage')}}/images/03-square-blog-images-elements-brix-templates.jpg 654w" alt="Blog - Elements Webflow Library - BRIX Templates" sizes="(max-width: 479px) 92vw, (max-width: 767px) 42vw, (max-width: 991px) 218px, (max-width: 1439px) 16vw, 210.328125px" src="{{asset('homePage')}}/images/03-square-blog-images-elements-brix-templates.jpg" class="brix---blog-card-image"></div>
-                                <div class="brix---mg-left-24px---mg-top-16px-mbp">
-                                    <div class="brix---mg-bottom-8px">
-                                        <div class="brix---color-accent-1">
-                                            <div class="brix---text-100-medium">
-                                                <div>Growth</div>
+                            @foreach($otherblogs as $row)
+                                <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fd3" href="{{ route('home.blog', $row->slug) }}" class="brix---blog-card-wrapper-featured-sidebar w-inline-block">
+                                    <div class="brix---blog-card-wrapper-width-218px"><img srcset="{{asset($row->image)}} 500w, {{asset($row->image)}} 654w" alt="{{$row->name}}" sizes="(max-width: 479px) 92vw, (max-width: 767px) 42vw, (max-width: 991px) 218px, (max-width: 1439px) 16vw, 210.328125px" src="{{asset($row->image)}}" class="brix---blog-card-image"></div>
+                                    <div class="brix---mg-left-24px---mg-top-16px-mbp">
+                                        <div class="brix---mg-bottom-8px">
+                                            <div class="brix---color-accent-1">
+                                                <div class="brix---text-100-medium">
+                                                    <div>{{$row->category->name}}</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="brix---color-neutral-801">
-                                        <h3 class="brix---heading-h4-size">How to build the ultimate tech stack for growth</h3>
-                                    </div>
-                                </div>
-                            </a>
-                            <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1fdf" href="blog.html" class="brix---blog-card-wrapper-featured-sidebar w-inline-block">
-                                <div class="brix---blog-card-wrapper-width-218px"><img srcset="{{asset('homePage')}}/images/05-square-blog-images-elements-brix-templates-p-500.jpg 500w, {{asset('homePage')}}/images/05-square-blog-images-elements-brix-templates.jpg 654w" alt="Blog - Elements Webflow Library - BRIX Templates" sizes="(max-width: 479px) 92vw, (max-width: 767px) 43vw, (max-width: 991px) 218px, (max-width: 1439px) 16vw, 214.53125px" src="{{asset('homePage')}}/images/05-square-blog-images-elements-brix-templates.jpg" class="brix---blog-card-image"></div>
-                                <div class="brix---mg-left-24px---mg-top-16px-mbp">
-                                    <div class="brix---mg-bottom-8px">
-                                        <div class="brix---color-accent-1">
-                                            <div class="brix---text-100-medium">
-                                                <div>Growth</div>
-                                            </div>
+                                        <div class="brix---color-neutral-801">
+                                            <h3 class="brix---heading-h4-size">{{ $row->name }}</h3>
                                         </div>
                                     </div>
-                                    <div class="brix---color-neutral-801">
-                                        <h3 class="brix---heading-h4-size">4 tips to optimize your funnels for conversion</h3>
-                                    </div>
-                                </div>
-                            </a>
-                            <a data-w-id="b0c01ad9-afc9-4aea-4b0b-17fe5f2d1feb" href="blog.html" class="brix---blog-card-wrapper-featured-sidebar w-inline-block">
-                                <div class="brix---blog-card-wrapper-width-218px"><img srcset="{{asset('homePage')}}/images/06-square-blog-images-elements-brix-templates-p-500.jpg 500w, {{asset('homePage')}}/images/06-square-blog-images-elements-brix-templates.jpg 654w" alt="Blog - Elements Webflow Library - BRIX Templates" sizes="(max-width: 479px) 92vw, (max-width: 767px) 43vw, (max-width: 991px) 218px, (max-width: 1439px) 16vw, 213.734375px" src="{{asset('homePage')}}/images/06-square-blog-images-elements-brix-templates.jpg" class="brix---blog-card-image"></div>
-                                <div class="brix---mg-left-24px---mg-top-16px-mbp">
-                                    <div class="brix---mg-bottom-8px">
-                                        <div class="brix---color-accent-1">
-                                            <div class="brix---text-100-medium">
-                                                <div>Tech</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brix---color-neutral-801">
-                                        <h3 class="brix---heading-h4-size">How to build and automate a referral program</h3>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

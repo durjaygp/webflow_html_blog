@@ -21,13 +21,13 @@ class WebController extends Controller
     public function index(){
         $blogs = Blog::latest()->whereStatus(1)->limit(4)->get();
 
-
-
+        $featured = $blogs->splice(0, 1)->first();
+        $otherblogs = $blogs->take(3);
         foreach ($blogs as $row) {
             $wordCount = str_word_count(strip_tags($row->main_content)); // Assuming description contains the content of the blog post
             $row->readingTime = ceil($wordCount / 200); // Assuming an average reading speed of 200 WPM
         }
-        return view('frontEnd.home.index',compact('blogs'));
+        return view('frontEnd.home.index',compact('blogs','featured','otherblogs'));
     }
 
 

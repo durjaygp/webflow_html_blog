@@ -54,7 +54,7 @@
                                     @php
                                         $categories = \App\Models\Category::latest()->get();
                                     @endphp
-                                    <select name="category_id[]" id="" class="form-control" multiple required>
+                                    <select name="category_id" id="" class="form-control" required>
                                         <option>Select Category</option>
                                         @foreach($categories as $row)
                                             <option value="{{$row->id}}" >{{$row->name}}</option>

@@ -54,12 +54,11 @@
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Category</label>
                                     @php
                                         $categories = \App\Models\Category::latest()->get();
-                                        $selectedCategories = json_decode($blog->category_id);
                                     @endphp
 
-                                    <select name="category_id[]" id="category_id" class="form-control" multiple>
+                                    <select name="category_id" id="category_id" class="form-control" required>
                                         @foreach($categories as $row)
-                                            <option value="{{ $row->id }}" @if(in_array($row->id, $selectedCategories)) selected @endif>{{ $row->name }}</option>
+                                            <option value="{{ $row->id }}" @if($row->id == $blog->category_id) selected @endif>{{ $row->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

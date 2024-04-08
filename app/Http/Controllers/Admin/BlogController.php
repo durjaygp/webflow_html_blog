@@ -60,15 +60,14 @@ class BlogController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-       $categoryIdsJson = json_encode($request->category_id);
+
 
         $recipe = new Blog();
         $recipe->name = $request->name;
         $recipe->slug = Str::slug($request->name, '-');
         $recipe->user_id = auth()->user()->id;
         $recipe->description = $request->description;
-        $recipe->category_id = $categoryIdsJson;
-        //$recipe->category_id = $request->category_id;
+        $recipe->category_id = $request->category_id;
         $recipe->main_content = $request->main_content;
         $recipe->status = $request->status;
         $recipe->position = $request->position;
